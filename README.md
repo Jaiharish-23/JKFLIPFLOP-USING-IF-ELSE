@@ -93,10 +93,13 @@ endmodule
 ```
 
 **RTL LOGIC FOR FLIPFLOPS**
-![{25E0F7D4-2816-4857-BAE0-178FFF352BD5}](https://github.com/user-attachments/assets/783fbee4-928d-45b6-8d12-2a2ddf0dce1f)
+![{C249C551-1D67-446A-8E13-382661BF515F}](https://github.com/user-attachments/assets/75e6704b-cbc7-4da7-a9ff-8dcf927fa5ed)
+
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![image](https://github.com/user-attachments/assets/85fb152e-fca1-4e2e-ac46-7cc91707c384)
+![Screenshot (270)](https://github.com/user-attachments/assets/d154613d-9792-436c-9e9a-78b1179b2abe)
+
 
 **RESULTS**
 The observation of the simulation results and confirm the successful execution of the program.
