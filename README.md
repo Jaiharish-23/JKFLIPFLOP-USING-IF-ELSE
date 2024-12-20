@@ -52,6 +52,41 @@ Step 6: Open in RTL viewers to get RTL diagram output.
 Developed by: Jai Harish R 
 RegisterNumber:24006817
 */
+```
+module JK_FLIP_FLOP(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+	 
+always @ (posedge (clock))
+
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end   
+        
+else
+   begin
+	   if(j==0 && k==0)
+		   begin
+			q<=q;
+			qb<=qb;
+			end
+		else if(j!=k)
+		   begin
+			q<=j;
+			qb<=k;
+			end
+		else if(j==1 && k==1)
+		    begin
+			 q<=~q;
+			 qb<=~qb;
+			 end
+	end
+end	
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 ![{BEED76B3-5A45-4591-AF08-5F213CAACEE5}](https://github.com/user-attachments/assets/197b2e9f-207a-4de1-9c39-7c498101d4cf)
