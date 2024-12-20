@@ -53,47 +53,50 @@ Developed by: Jai Harish R
 RegisterNumber:24006817
 */
 ```
-module JK_FLIP_FLOP(q, qb,j,k,clock,reset);
-    input j,k,clock,reset;
-    output reg q, qb;
-	 
-always @ (posedge (clock))
-
-    begin 
-        if (!reset)
-            begin
-               q <= q;
-               qb <=qb;
-            end   
-        
+module JK_FLIP_FLOP(j, k, clk, rst, q, qbar);
+ input j;
+ input k;
+ input clk;
+ input rst;
+ output q;
+ output qbar;
+reg q;
+reg qbar;
+always @ (posedge(clk) or posedge(rst)) begin
+if (rst==1'b1)
+begin
+q=1'b0;
+qbar=1'b1;
+end
+else if (j==1'b0 && k==1'b0)
+begin
+q=q;
+qbar=qbar;
+end
+else if (j==1'b0 && k==1'b1)
+begin
+q=1'b0;
+qbar=1'b1;
+end
+else if (j==1'b1 && k==1'b0)
+begin
+q=1'b1;
+qbar=1'b0;
+end
 else
-   begin
-	   if(j==0 && k==0)
-		   begin
-			q<=q;
-			qb<=qb;
-			end
-		else if(j!=k)
-		   begin
-			q<=j;
-			qb<=k;
-			end
-		else if(j==1 && k==1)
-		    begin
-			 q<=~q;
-			 qb<=~qb;
-			 end
-	end
-end	
+begin
+q=~q;
+qbar=~qbar;
+end
+end
 endmodule
 ```
 
 **RTL LOGIC FOR FLIPFLOPS**
-![{BEED76B3-5A45-4591-AF08-5F213CAACEE5}](https://github.com/user-attachments/assets/197b2e9f-207a-4de1-9c39-7c498101d4cf)
-
+![{25E0F7D4-2816-4857-BAE0-178FFF352BD5}](https://github.com/user-attachments/assets/783fbee4-928d-45b6-8d12-2a2ddf0dce1f)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![image](https://github.com/user-attachments/assets/81a7fb5a-577e-4313-8985-1d5b985a0069)
+![image](https://github.com/user-attachments/assets/85fb152e-fca1-4e2e-ac46-7cc91707c384)
 
 **RESULTS**
 The observation of the simulation results and confirm the successful execution of the program.
